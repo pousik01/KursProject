@@ -1,0 +1,43 @@
+
+.content{
+    width: 90%;
+    border: 1px solid black;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+}
+.first{
+    width: 60%;
+}
+.second{
+    width: 40%;
+}
+.second img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+header{
+    height: 15%;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content:space-between
+}
+footer{
+    height: 15%;
+    width: 100%;
+    background-color: gray;
+}
+.container{
+    height: 70%;
+    width: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+body {
+    height: 100%;
+    width: 99%;
+}
