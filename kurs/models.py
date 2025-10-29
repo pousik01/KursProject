@@ -1,13 +1,34 @@
 from django.db import models
 
-# Create your models here.
-class TypeArticle(models.Model):
-    type = models.CharField(max_length=15)
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+    
+    def __str__(self):
+        return self.name
+
+class Tag(models.Model):
+    name = models.CharField(max_length=20)
+    
+    def __str__(self):
+        return self.name
+
+class Author(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 class Article(models.Model):
-    type = models.ForeignKey(TypeArticle, on_delete=models.CASCADE) #Тип статьи
-    title = models.CharField(max_length=40) #Наименование статьи
-    description = models.CharField(max_length=999) #Описание статьи
-    date = models.DateField() #Дата публикации
-    image = models.ImageField() #Изображение
-    source = models.CharField(max_length=50) #Ссылка на источник
+    class Status(models.TextChoices):
+        DRAFT = 'draft'
+        PUBLISHED = 'published'
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    tags = models.ManyToManyField(Tag)
+    status = models.CharField(max_length=10, choices=Status.choices, default=Status.DRAFT)
+    timestamp = models.DateTimeField(auto_now=True)
+    
+    def __str__(self):
+        return self.title
