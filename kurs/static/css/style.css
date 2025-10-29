@@ -1,43 +1,126 @@
+/* static/css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-.content{
-    width: 90%;
-    border: 1px solid black;
-    border-radius: 4px;
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
     display: flex;
-    flex-direction: row;
-}
-.first{
-    width: 60%;
-}
-.second{
-    width: 40%;
-}
-.second img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-header{
-    height: 15%;
-    width: 100%;
-    background-color: gray;
-    display: flex;
-    justify-content:space-between
-}
-footer{
-    height: 15%;
-    width: 100%;
-    background-color: gray;
-}
-.container{
-    height: 70%;
-    width: 100%;
-    background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
-body {
-    height: 100%;
-    width: 99%;
+
+.log img {
+    height: 50px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.content {
+    display: flex;
+    background: white;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.first {
+    flex: 2;
+    padding: 1.5rem;
+}
+
+.second {
+    flex: 1;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+h2 {
+    color: #333;
+    margin-top: 0;
+}
+
+.type {
+    color: #666;
+    font-style: italic;
+}
+
+.date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.source {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.source:hover {
+    text-decoration: underline;
+}
+
+.no-articles {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav {
+        margin-top: 1rem;
+    }
+    
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
 }
