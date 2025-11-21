@@ -6,7 +6,7 @@ router = routers.DefaultRouter()
 router.register(r'articles', views.ArticleViewSet)
 router.register(r'tags', views.TagViewSet)
 router.register(r'categories', views.CategoryViewSet)
-router.register(r'author', views.AuthorViewSet)
+router.register(r'authors', views.AuthorViewSet)
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [

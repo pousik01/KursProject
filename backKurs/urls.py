@@ -20,7 +20,7 @@ from kurs import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('gg/', include('kurs.urls')),
+    path('api/', include('kurs.urls')),
     path('', views.index),
     path('about', views.about),
     path('contact', views.contact),
